@@ -18,8 +18,8 @@ export class RecordsService {
   public findById(id: number): Observable<Record> {
     return this.http.get<Record>(this.recordsUrl + '/'+id);
   }
-  public findByIdAndData(record: Record): Observable<Record> {
-    return this.http.get<Record>(this.recordsUrl+'/search');
+  public findByIdAndData(record: Record): Observable<Record[]> {
+    return this.http.get<Record[]>(this.recordsUrl+'/search');
   }
    
   public createRecord(record: Record): Observable<Record>{

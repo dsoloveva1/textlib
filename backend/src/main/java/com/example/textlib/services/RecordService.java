@@ -35,7 +35,7 @@ public class RecordService {
         recordRepository.deleteRecord(id);
     }
 
-    public Record findByIdAndData(Record record) {
+    public List<Record> findByIdAndData(Record record) {
         return recordRepository.findByIdAndData(record);
     }
 }

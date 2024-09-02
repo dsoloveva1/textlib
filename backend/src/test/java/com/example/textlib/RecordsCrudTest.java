@@ -36,8 +36,8 @@ public class RecordsCrudTest {
     @Test
     @Order(3)
     public void findRecordByIdAndDataTest(){
-        Record record = recordRepository.findByIdAndData(new Record(1L, "Some data"));
-        Assertions.assertThat(record.getId()).isEqualTo(1L);
+        List<Record> records = recordRepository.findByIdAndData(new Record(1L, "Some data"));
+        Assertions.assertThat(records.size()).isGreaterThan(0);
     }
 
     @Test

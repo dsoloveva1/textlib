@@ -41,7 +41,7 @@ public class RecordRepository {
         mongoTemplate.remove(findById(id));
     }
 
-    public Record findByIdAndData(Record record) {
+    public List<Record> findByIdAndData(Record record) {
         Criteria criteria = new Criteria();
         if (record.getId() != null) {
             criteria = criteria.and("id").is(record.getId());
@@ -50,6 +50,6 @@ public class RecordRepository {
             criteria = criteria.and("data").is(record.getData());
         }
         Query query = new Query(criteria);
-        return mongoTemplate.findOne(query, Record.class);
+        return mongoTemplate.find(query, Record.class);
     }
 }
