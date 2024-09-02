@@ -1,0 +1,30 @@
+<form (ngSubmit)="createRecord()">
+    <table>
+        <thead>
+            <tr>
+                <th>Новая запись</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><label for="data">Данные:</label></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="data" [(ngModel)]="record.data"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+
+                <td><input type="submit" value="Добавить" class="btn btn-primary"></td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
+
+<div *ngIf="submitted" class="alert alert-success">
+    <h4>Запись создана!</h4>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+    <h4>{{errorMessage}}</h4>
+</div>

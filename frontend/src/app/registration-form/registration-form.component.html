@@ -1,0 +1,36 @@
+<form (ngSubmit)="createUser()" *ngIf="!submitted">
+    <table>
+        <thead>
+            <tr>
+                <th>Регистрация</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><label for="email">Электронная почта:</label></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="email" [(ngModel)]="user.email"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Пароль:</label></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="password" [(ngModel)]="user.password"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+
+                <td><input type="submit" value="Зарегистрироваться" class="btn btn-primary"></td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
+
+<div *ngIf="submitted" class="alert alert-success">
+    <h4>Регистрация прошла успешно!</h4>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+    <h4>{{errorMessage}}</h4>
+</div>
